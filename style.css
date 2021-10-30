@@ -1,0 +1,79 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth !important;
+}
+body{
+    overflow-x: hidden;
+    background-color: #F7F7F7;
+}
+
+.activeLink::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 30px);
+    height: 100%;
+    background-color: #00A1E0;
+    border-radius: 12px;
+    transform: translateX(-50px);
+}
+.noneActiveLink::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 30px);
+    height: 100%;
+    background-color: white;
+    border-radius: 12px;
+    transform: translateX(-50px);
+}
+.noneActiveLink:hover::before{
+    background-color: #e0e0e038;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #edf2f7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 100vh;
+  border: 4px solid #edf2f7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+.leftScroll{
+    overflow-y: hidden;
+    scrollbar-gutter: stable both-edges;
+}
+.leftScroll:hover{
+    overflow-y: auto !important;
+}
+.headerBg{
+  background-color: #F7F7F7;
+}
+.gridUtilityMain{
+  grid-template-columns: 1fr 300px;
+}
+.gridUtility1{
+  grid-template-columns: 240px 1fr;
+}
+.pointsWidth{
+  width: 13px;
+  height: 13px;
+}
