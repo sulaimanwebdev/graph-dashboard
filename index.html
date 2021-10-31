@@ -444,8 +444,19 @@
 
 
                              
-<div class="w-full rounded-lg border h-72 bg-white">
+<div class="w-full rounded-lg border bg-white">
   <!-- graph 2 -->
+
+
+
+<div class="relative h-full w-full">
+<div id="chart"></div>
+</div>
+
+
+
+
+  
 </div>
 
 
@@ -567,7 +578,7 @@
 
 <div class="text-lg mt-5 text-black mb-3 opacity-70"><span class="font-semibold">Client User</span> <span class="font-md">Details</span></div>
 
-<div class="bg-white rounded-lg max-h-32 	h-full ">
+<div class="bg-white rounded-lg max-h-32	h-full ">
 <div class="grid grid-cols-2 px-6 bg-gray-200 gap-10 font-medium rounded-lg rounded-b-none py-3">
 <div class="text-bold text-black text-md">User Name</div>
 <div class="text-bold text-black text-md">Role</div>
@@ -713,6 +724,7 @@
 
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
 
 let ctx = document.querySelector('#myChart').getContext("2d");
@@ -754,6 +766,178 @@ const config = {
 }
 
 const myChart = new Chart(ctx, config);
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+var options = {
+          series: [
+          {
+            name: 'Bob',
+            data: [
+              {
+                x: 'Design',
+                y: [
+                  new Date('2019-03-05').getTime(),
+                  new Date('2019-03-08').getTime()
+                ]
+              },
+              {
+                x: 'Code',
+                y: [
+                  new Date('2019-03-02').getTime(),
+                  new Date('2019-03-05').getTime()
+                ]
+              },
+              {
+                x: 'Code',
+                y: [
+                  new Date('2019-03-05').getTime(),
+                  new Date('2019-03-07').getTime()
+                ]
+              },
+              {
+                x: 'Test',
+                y: [
+                  new Date('2019-03-03').getTime(),
+                  new Date('2019-03-09').getTime()
+                ]
+              },
+              {
+                x: 'Test',
+                y: [
+                  new Date('2019-03-08').getTime(),
+                  new Date('2019-03-11').getTime()
+                ]
+              },
+              {
+                x: 'Validation',
+                y: [
+                  new Date('2019-03-11').getTime(),
+                  new Date('2019-03-16').getTime()
+                ]
+              },
+              {
+                x: 'Design',
+                y: [
+                  new Date('2019-03-01').getTime(),
+                  new Date('2019-03-03').getTime()
+                ],
+              }
+            ]
+          },
+          {
+            name: 'Joe',
+            data: [
+              {
+                x: 'Design',
+                y: [
+                  new Date('2019-03-02').getTime(),
+                  new Date('2019-03-05').getTime()
+                ]
+              },
+              {
+                x: 'Test',
+                y: [
+                  new Date('2019-03-06').getTime(),
+                  new Date('2019-03-16').getTime()
+                ],
+                goals: [
+                  {
+                    name: 'Break',
+                    value: new Date('2019-03-10').getTime(),
+                    strokeColor: '#CD2F2A'
+                  }
+                ]
+              },
+              {
+                x: 'Code',
+                y: [
+                  new Date('2019-03-03').getTime(),
+                  new Date('2019-03-07').getTime()
+                ]
+              },
+              {
+                x: 'Deployment',
+                y: [
+                  new Date('2019-03-20').getTime(),
+                  new Date('2019-03-22').getTime()
+                ]
+              },
+              {
+                x: 'Design',
+                y: [
+                  new Date('2019-03-10').getTime(),
+                  new Date('2019-03-16').getTime()
+                ]
+              }
+            ]
+          },
+          {
+            name: 'Dan',
+            data: [
+              {
+                x: 'Code',
+                y: [
+                  new Date('2019-03-10').getTime(),
+                  new Date('2019-03-17').getTime()
+                ]
+              },
+              {
+                x: 'Validation',
+                y: [
+                  new Date('2019-03-05').getTime(),
+                  new Date('2019-03-09').getTime()
+                ],
+                goals: [
+                  {
+                    name: 'Break',
+                    value: new Date('2019-03-07').getTime(),
+                    strokeColor: '#CD2F2A'
+                  }
+                ]
+              },
+            ]
+          }
+        ],
+          chart: {
+          height: 450,
+          type: 'rangeBar'
+        },
+        plotOptions: {
+          bar: {
+            horizontal: true,
+            barHeight: '80%'
+          }
+        },
+        xaxis: {
+          type: 'datetime'
+        },
+        stroke: {
+          width: 1
+        },
+        fill: {
+          type: 'solid',
+          opacity: 0.6
+        },
+        legend: {
+          position: 'top',
+          horizontalAlign: 'left'
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+
 
     </script>
 </body>
