@@ -730,7 +730,7 @@ const labels = [
 const data = {
     labels,
     datasets: [{
-        data: [20,21,21,22,21,],
+        data: [20,21,21,21.5,21,],
         label: "Certificaltes",
         fill: false,
         borderColor: '#00A1E0',
@@ -746,14 +746,15 @@ const config = {
     type: "line",
     data: data,
     options:{
-      radius: 5,
-      hitRadius: 40,
-      hoverRadius: 7,
+      radius: 4.5,
+      hitRadius: 30,
+      hoverRadius: 6,
         responsive: true,
     }
 }
 
 const myChart = new Chart(ctx, config);
+
     </script>
 </body>
 </html>
