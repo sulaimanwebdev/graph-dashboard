@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.11.1/css/all.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Dashboard</title>
 </head>
 <body>
@@ -403,8 +402,10 @@
 
 
 
+                         <div class="relative w-full">
+                          <canvas id="myChart"></canvas>
 
-
+                         </div>
 
 
 
@@ -711,6 +712,48 @@
 
 
     <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+let ctx = document.querySelector('#myChart').getContext("2d");
+
+
+const labels = [
+    "Jan 2021",
+    "March 2021",
+    "Jun 2021",
+    "Sep 2021",
+    "Dec 2021",
+   
+]
+
+const data = {
+    labels,
+    datasets: [{
+        data: [20,21,21,22,21,],
+        label: "Certificaltes",
+        fill: false,
+        borderColor: '#00A1E0',
+        pointBackgroundColor: '#958aff',
+        tension: '0.5',
+        backgroundColor: '#d9f4ff',
+        borderColor: '#00A1E0',
+        
+    }]
+}
+
+const config = {
+    type: "line",
+    data: data,
+    options:{
+      radius: 5,
+      hitRadius: 40,
+      hoverRadius: 7,
+        responsive: true,
+    }
+}
+
+const myChart = new Chart(ctx, config);
+    </script>
 </body>
 </html>
