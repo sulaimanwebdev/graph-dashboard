@@ -123,6 +123,15 @@ body{
 }
 
 .rightCardScroll::-webkit-scrollbar-thumb {
-  
   border: 6px solid #ffffff;
+}
+.activeDropDown{
+  display: block !important;
+}
+
+.activeSideBar{
+  transform: translateX(0%) !important;
+}
+.bgActive{
+  display: flex !important;
 }

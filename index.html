@@ -10,15 +10,17 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.11.1/css/all.css">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Dashboard</title>
 </head>
 <body>
 
 
     <div>
+      <div class="fixed inset-0 hidden blackBg bg-gray-600 transition duration-300 ease-in-out bg-opacity-75 z-40" aria-hidden="true"></div>
+
         <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
-        <div class="fixed inset-0 z-40 flex md:hidden" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 z-40 transform -translate-x-full transition duration-300 ease-in-out realBar lg:hidden" role="dialog" aria-modal="true">
           <!--
             Off-canvas menu overlay, show/hide based on off-canvas menu state.
       
@@ -29,7 +31,6 @@
               From: "opacity-100"
               To: "opacity-0"
           -->
-          <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
       
           <!--
             Off-canvas menu, show/hide based on off-canvas menu state.
@@ -41,6 +42,7 @@
               From: "translate-x-0"
               To: "-translate-x-full"
           -->
+          
           <div class="relative max-w-xs w-full bg-white pt-5 pb-4 flex-1 flex flex-col">
             <!--
               Close button, show/hide based on off-canvas menu state.
@@ -53,7 +55,7 @@
                 To: "opacity-0"
             -->
             <div class="absolute top-0 right-0 -mr-12 pt-2">
-              <button type="button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+              <button type="button" class="ml-1 closeBtn flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                 <span class="sr-only">Close sidebar</span>
                 <!-- Heroicon name: outline/x -->
                 <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -147,7 +149,7 @@
         </div>
       
         <!-- Static sidebar for desktop -->
-        <div class="hidden  md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
+        <div class="hidden  lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0">
           <!-- Sidebar component, swap this element with another sidebar if you like -->
           <div class="border-r border-gray-200 pt-5 flex flex-col flex-grow bg-white leftScroll">
             <div class="flex-shrink-0 px-4 flex items-center">
@@ -230,13 +232,13 @@
           </div>
         </div>
       
-        <div class="md:pl-64" >
+        <div class="lg:pl-64" >
           <div class="max-w-7xl mx-auto flex flex-col md:px-8 xl:px-10">
-            <div class="z-10 flex-shrink-0 h-16 border-b border-gray-200 flex">
-              <button type="button" class="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden">
+            <div class="z-10 flex-shrink-0 h-16 flex">
+              <button type="button" class=" openBar pr-4 text-gray-500  mt-7 lg:hidden">
                 <span class="sr-only">Open sidebar</span>
                 <!-- Heroicon name: outline/menu-alt-2 -->
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
                 </svg>
               </button>
@@ -314,7 +316,7 @@
 
 
 
-                      <button type="button" class="max-w-xs flex items-center gap-3 text-sm h-full  pr-5 pl-5 border-l	" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                      <button type="button" class="dropDownClick max-w-xs flex items-center gap-3 text-sm h-full  pr-5 pl-5 border-l	" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                        
 
                         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -354,6 +356,14 @@
                         From: "transform opacity-100 scale-100"
                         To: "transform opacity-0 scale-95"
                     -->
+                    <div class="origin-top-right hidden dropDownContent absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                      <!-- Active: "bg-gray-100", Not Active: "" -->
+                      <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+      
+                      <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+      
+                      <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                    </div>
                   
                   </div>
                 </div>
@@ -389,6 +399,18 @@
 
                              <div class="border rounded-lg px-3">
                              <!-- graph 1 -->
+
+
+
+
+
+
+
+
+
+
+
+                             
                              </div>
 
                           </div>
@@ -689,5 +711,6 @@
 
 
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </body>
 </html>
