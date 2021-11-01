@@ -188391,3 +188391,90 @@ video {
 }
 
 /* utilities */
+.leftScroll{
+    overflow-y: hidden;
+    scrollbar-gutter: stable both-edges;
+}
+.leftScroll:hover{
+    overflow-y: auto !important;
+}
+.headerBg{
+  background-color: #F7F7F7;
+}
+.gridUtilityMain{
+  grid-template-columns: 1fr 300px;
+}
+.gridUtility1{
+  grid-template-columns: 240px 1fr;
+}
+.pointsWidth{
+  width: 13px;
+  height: 13px;
+}
+.mainMaxWidth{
+  max-width: 1600px;
+}
+
+
+
+
+
+
+
+/* circle percentage */
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+.circular-chart.orange .circle {
+  stroke: #ff9f00;
+}
+
+.circular-chart.green .circle {
+  stroke: #4CC790;
+}
+
+
+
+.percentage {
+  fill: #666;
+  font-family: sans-serif;
+  font-size: 0.5em;
+  text-anchor: middle;
+
+}
+
+.rightCardScroll::-webkit-scrollbar-track {
+  background: #ffffff !important;
+}
+
+.rightCardScroll::-webkit-scrollbar-thumb {
+  border: 6px solid #ffffff;
+}
+.activeDropDown{
+  display: block !important;
+}
+
+.activeSideBar{
+  transform: translateX(0%) !important;
+}
+.bgActive{
+  display: flex !important;
+}
+
+.apexcharts-toolbar{
+  display: none !important;
+}
+.apexcharts-legend-series{
+  display: none !important;
+}

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -232,7 +233,7 @@
         </div>
       
         <div class="lg:pl-64" >
-          <div class="max-w-7xl mx-auto flex flex-col md:px-8 xl:px-10">
+          <div class="mx-auto flex mainMaxWidth flex-col md:px-8 xl:px-10">
             <div class="z-10 flex-shrink-0 h-16 flex">
               <button type="button" class=" openBar pr-4 text-gray-500  mt-7 lg:hidden">
                 <span class="sr-only">Open sidebar</span>
@@ -243,7 +244,7 @@
               </button>
               <div class="flex-1 flex justify-between headerBg px-4 md:px-0 ">
                 <div class="flex-1 flex">
-                  <form class="w-full flex md:ml-0" action="#" method="GET">
+                  <form class="w-full flex md:ml-0 searchBtn" action="#" method="GET">
                     <label for="search-field" class="sr-only">Search</label>
                     <div class="relative w-full text-gray-400 focus-within:text-gray-600">
                       <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center px-3  ">
@@ -381,7 +382,7 @@
 
 
 
-                      <div class="sec1">
+                      <div class="sec1 w-full">
                         <h1 class="text-xl font-semibold text-black mb-3 opacity-70">Certifications</h1>
                           
                         <div class="bg-white  pl-5 px-5 pt-2 pb-2 rounded-xl">
@@ -396,7 +397,7 @@
         
                              </div>
 
-                             <div class="border rounded-lg px-3">
+                             <div class="border rounded-lg px-3 w-full">
                              <!-- graph 1 -->
 
 
@@ -419,10 +420,10 @@
 
 
                         <!-- 2ndSec -->
-                        <div >
+                        <div class="w-full">
                           <div class="flex items-center mt-5 justify-between">
                             <h1 class="text-xl  font-semibold text-black mb-3 opacity-70">Timeline</h1>
-                          <div class="flex items-center gap-5">
+                          <div class="flex dots items-center gap-5">
                             <div class="flex items-center gap-2 text-sm">
                               <span class="bg-blue-700 rounded block pointsWidth"></span>
                               Dummy Text
@@ -450,7 +451,7 @@
 
 
 <div class="relative h-full w-full">
-<div id="chart"></div>
+<div id="chart" class="w-full"></div>
 </div>
 
 
@@ -785,127 +786,60 @@ var options = {
             name: 'Bob',
             data: [
               {
-                x: 'Design',
+                x: '2021',
                 y: [
-                  new Date('2019-03-05').getTime(),
-                  new Date('2019-03-08').getTime()
+                new Date('2021-04-05').getTime(),
+                  new Date('2021-03-05').getTime()
+                  
+                ]
+              },
+
+              {
+                x: '2021',
+                y: [
+                  new Date('2021-05-05').getTime(),
+                  new Date('2021-08-05').getTime()
+                  
                 ]
               },
               {
-                x: 'Code',
+                x: '2020',
                 y: [
-                  new Date('2019-03-02').getTime(),
-                  new Date('2019-03-05').getTime()
+                new Date('2021-02-05').getTime(),
+                  new Date('2021-05-05').getTime()
                 ]
               },
               {
-                x: 'Code',
+                x: '2020',
                 y: [
-                  new Date('2019-03-05').getTime(),
-                  new Date('2019-03-07').getTime()
+                new Date('2021-06-05').getTime(),
+                  new Date('2021-07-05').getTime()
                 ]
               },
               {
-                x: 'Test',
+                x: '2019',
                 y: [
-                  new Date('2019-03-03').getTime(),
-                  new Date('2019-03-09').getTime()
+                  new Date('2021-05-05').getTime(),
+                  new Date('2021-08-05').getTime()
+                  
                 ]
               },
+             
               {
-                x: 'Test',
+                x: '2018',
                 y: [
-                  new Date('2019-03-08').getTime(),
-                  new Date('2019-03-11').getTime()
+                new Date('2021-01-08').getTime(),
+                  new Date('2021-03-16').getTime()
                 ]
               },
-              {
-                x: 'Validation',
-                y: [
-                  new Date('2019-03-11').getTime(),
-                  new Date('2019-03-16').getTime()
-                ]
-              },
-              {
-                x: 'Design',
-                y: [
-                  new Date('2019-03-01').getTime(),
-                  new Date('2019-03-03').getTime()
-                ],
-              }
+              
             ]
           },
-          {
-            name: 'Joe',
-            data: [
-              {
-                x: 'Design',
-                y: [
-                  new Date('2019-03-02').getTime(),
-                  new Date('2019-03-05').getTime()
-                ]
-              },
-              {
-                x: 'Test',
-                y: [
-                  new Date('2019-03-06').getTime(),
-                  new Date('2019-03-16').getTime()
-                ],
-                goals: [
-                  {
-                    name: 'Break',
-                    value: new Date('2019-03-10').getTime(),
-                    strokeColor: '#CD2F2A'
-                  }
-                ]
-              },
-              {
-                x: 'Code',
-                y: [
-                  new Date('2019-03-03').getTime(),
-                  new Date('2019-03-07').getTime()
-                ]
-              },
-              {
-                x: 'Deployment',
-                y: [
-                  new Date('2019-03-20').getTime(),
-                  new Date('2019-03-22').getTime()
-                ]
-              },
-              {
-                x: 'Design',
-                y: [
-                  new Date('2019-03-10').getTime(),
-                  new Date('2019-03-16').getTime()
-                ]
-              }
-            ]
-          },
+         
           {
             name: 'Dan',
             data: [
-              {
-                x: 'Code',
-                y: [
-                  new Date('2019-03-10').getTime(),
-                  new Date('2019-03-17').getTime()
-                ]
-              },
-              {
-                x: 'Validation',
-                y: [
-                  new Date('2019-03-05').getTime(),
-                  new Date('2019-03-09').getTime()
-                ],
-                goals: [
-                  {
-                    name: 'Break',
-                    value: new Date('2019-03-07').getTime(),
-                    strokeColor: '#CD2F2A'
-                  }
-                ]
-              },
+             
             ]
           }
         ],
@@ -934,6 +868,7 @@ var options = {
           horizontalAlign: 'left'
         }
         };
+        
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();

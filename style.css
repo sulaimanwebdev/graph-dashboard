@@ -57,81 +57,50 @@ body{
 ::-webkit-scrollbar-thumb:hover {
   background: #a0aec0;
 }
-.leftScroll{
-    overflow-y: hidden;
-    scrollbar-gutter: stable both-edges;
-}
-.leftScroll:hover{
-    overflow-y: auto !important;
-}
-.headerBg{
-  background-color: #F7F7F7;
-}
-.gridUtilityMain{
-  grid-template-columns: 1fr 300px;
-}
-.gridUtility1{
-  grid-template-columns: 240px 1fr;
-}
-.pointsWidth{
-  width: 13px;
-  height: 13px;
+
+
+
+
+
+/* media queries */
+
+@media (max-width:1342px){
+  .gridUtilityMain{
+    grid-template-columns: 1fr 1fr !important;
+  }
 }
 
-
-
-
-
-
-
-
-/* circle percentage */
-
-.circle-bg {
-  fill: none;
-  stroke: #eee;
-  stroke-width: 3.8;
+@media (max-width:1186px){
+  .gridUtilityMain{
+    grid-template-columns: 1fr !important;
+  }
 }
 
-.circle {
-  fill: none;
-  stroke-width: 2.8;
-  stroke-linecap: round;
-  animation: progress 1s ease-out forwards;
+@media (max-width:910px){
+  .gridUtility1{
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+  }
 }
 
-.circular-chart.orange .circle {
-  stroke: #ff9f00;
+@media (max-width:520px){
+  .dots{
+   display: none !important;
+  }
+
+ 
+}
+@media (max-width:586px){
+  .dropDownClick{
+    display: none !important;
+  }
 }
 
-.circular-chart.green .circle {
-  stroke: #4CC790;
-}
-
-
-
-.percentage {
-  fill: #666;
-  font-family: sans-serif;
-  font-size: 0.5em;
-  text-anchor: middle;
-
-}
-
-.rightCardScroll::-webkit-scrollbar-track {
-  background: #ffffff !important;
-}
-
-.rightCardScroll::-webkit-scrollbar-thumb {
-  border: 6px solid #ffffff;
-}
-.activeDropDown{
-  display: block !important;
-}
-
-.activeSideBar{
-  transform: translateX(0%) !important;
-}
-.bgActive{
-  display: flex !important;
+@media (max-width:372px){
+  .dropDownClick{
+    display: none !important;
+  }
+  .searchBtn{
+    display: none !important;
+  }
 }
