@@ -233,7 +233,7 @@
         </div>
       
         <div class="lg:pl-64" >
-          <div class=" flex mainMaxWidth flex-col md:px-8 xl:px-10">
+          <div class=" flex flex-col md:px-8 xl:px-10">
             <div class="z-10 flex-shrink-0 h-16 flex">
               <button type="button" class=" openBar pr-4 text-gray-500  mt-7 lg:hidden">
                 <span class="sr-only">Open sidebar</span>
@@ -397,12 +397,12 @@
         
                              </div>
 
-                             <div class="border rounded-lg px-3 w-full grid grid-cols-2">
+                             <div class="border rounded-lg px-3 w-full  grid-cols-1 lg:grid grid-cols-2">
                              <!-- graph 1 -->
 
 
-                             <div class="border-r border-l  flex items-center justify-center text-center px-2">CERTIFICATION STATUS</div>
-                             <div class="border-l border-r flex items-center justify-center text-center px-2">CERTIFICATION STATUS</div>
+                             <div class="border-r border-l relative flex items-center justify-center grapsHeight"><canvas id="myChart"></canvas></div>
+                             <div class="border-l border-r relative flex items-center justify-center p-2 border-t mt-10 rouned-lg lg:mt-0 lg:border-none grapsHeight"><canvas id="pieChart"></canvas></div>
                        
 
 
@@ -440,16 +440,16 @@
 
 
                              
-<div class="w-full rounded-lg border bg-white gridSecond grid">
+<div class="w-full rounded-lg border bg-white gridSecond grid ">
   <!-- graph 2 -->
 
 
 
-<div class="relative h-full w-full">
+<div class="relative h-full w-full ">
 <div id="chart" class="w-full h-full"></div>
 </div>
 
-<div class="bg-white border-l rounded-lg px-1 hidden xl:flex items-center justify-center text center h-full" >CERTIFICATION STATUS</div>
+<div class="bg-white border-l rounded-lg px-1 hidden relative xl:flex items-center justify-center text center h-full p-5 grapsHeight" ><canvas id="polarChart" height="full"></canvas></div>
 
 
   
@@ -723,55 +723,140 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
 
-// let ctx = document.querySelector('#myChart').getContext("2d");
 
 
-// const labels = [
-//     "Jan 2021",
-//     "March 2021",
-//     "Jun 2021",
-//     "Sep 2021",
-//     "Dec 2021",
+const labels = [
+    "Jan 2021",
+    "March 2021",
+    "Jun 2021",
+    "Sep 2021",
+    "Dec 2021",
    
-// ]
+]
 
-// const data = {
-//     labels,
-//     datasets: [{
-//         data: [20,21,21,21.5,21,],
-//         label: "Certificaltes",
-//         fill: false,
-//         borderColor: '#00A1E0',
-//         pointBackgroundColor: '#958aff',
-//         tension: '0.5',
-//         backgroundColor: '#d9f4ff',
-//         borderColor: '#00A1E0',
+const data = {
+    labels,
+    datasets: [{
+        data: [20,21,21,21.5,21,],
+        label: "Certificaltes",
+        fill: false,
+        borderColor: '#00A1E0',
+        pointBackgroundColor: '#958aff',
+        tension: '0.5',
+        backgroundColor: '#d9f4ff',
+        borderColor: '#00A1E0',
         
-//     }]
-// }
+    }]
+}
 
-// const config = {
-//     type: "line",
-//     data: data,
-//     options:{
-//       radius: 4.5,
-//       hitRadius: 30,
-//       hoverRadius: 6,
-//         responsive: true,
-//     }
-// }
+const config = {
+    type: "line",
+    data: data,
+    options:{
+      radius: 4.5,
+      hitRadius: 30,
+      hoverRadius: 6,
+        responsive: true,
+        legend: {
+            display: false
+         },
+        maintainAspectRatio: false,
 
-// const myChart = new Chart(ctx, config);
-
-
-
-
-
+    }
+}
 
 
 
 
- 
+const pieData = {
+    labels,
+    datasets: [{
+        data: [20,21,21,40.5,30,],
+        label: "Certificaltes",
+        fill: false,
+        borderColor: '#00A1E0',
+        pointBackgroundColor: '#958aff',
+        tension: '0.5',
+        backgroundColor: '#d9f4ff',
+        borderColor: '#00A1E0',
+        
+    }]
+}
+
+
+const Pieconfig = {
+    type: "pie",
+    data: pieData,
+    options:{
+      plugins:{   
+             legend: {
+               display: false
+                     },
+                  
+             },
+      hoverRadius: 6,
+        responsive: true,
+        maintainAspectRatio: false,
+        
+        
+        
+    }
+}
+
+
+
+
+const polarConfig = {
+    type: "polarArea",
+    data: pieData,
+    options:{
+      plugins:{   
+             legend: {
+               display: false
+                     },
+                  
+             },
+      hoverRadius: 6,
+        responsive: true,
+        maintainAspectRatio: false,
+        
+        
+        
+    }
+}
+
+
+
+const myChart = new Chart(
+  document.querySelector('#myChart'),
+  config
+);
+
+
+
+const pieChart = new Chart(
+  document.querySelector('#pieChart'),
+  Pieconfig,
+  
+);
+
+
+const polarChart = new Chart(
+  document.querySelector('#polarChart'),
+  polarConfig,
+  
+);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -840,7 +925,7 @@ var options = {
         ],
           chart: {
           type: 'rangeBar',
-          height: 300,
+          height: 200,
 
         },
         plotOptions: {

@@ -80,7 +80,7 @@ body{
   .gridUtility1{
     grid-template-columns: 1fr !important;
     width: 100% !important;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
   }
 }
 
@@ -109,4 +109,8 @@ body{
   .gridSecond{
     grid-template-columns: 1fr !important;
   }
+}
+
+.grapsHeight{
+  height: 200px;
 }
