@@ -188478,3 +188478,8 @@ video {
 .apexcharts-legend-series{
   display: none !important;
 }
+
+.gridSecond{
+  grid-template-columns: 1fr 230px;
+  
+}

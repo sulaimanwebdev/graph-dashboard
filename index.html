@@ -397,18 +397,13 @@
         
                              </div>
 
-                             <div class="border rounded-lg px-3 w-full">
+                             <div class="border rounded-lg px-3 w-full grid grid-cols-2">
                              <!-- graph 1 -->
 
 
-
-
-                         <div class="relative w-full">
-                          <canvas id="myChart"></canvas>
-
-                         </div>
-
-
+                             <div class="border-r border-l  flex items-center justify-center text-center px-2">CERTIFICATION STATUS</div>
+                             <div class="border-l border-r flex items-center justify-center text-center px-2">CERTIFICATION STATUS</div>
+                       
 
 
 
@@ -445,16 +440,16 @@
 
 
                              
-<div class="w-full rounded-lg border bg-white">
+<div class="w-full rounded-lg border bg-white gridSecond grid">
   <!-- graph 2 -->
 
 
 
 <div class="relative h-full w-full">
-<div id="chart" class="w-full"></div>
+<div id="chart" class="w-full h-full"></div>
 </div>
 
-
+<div class="bg-white border-l rounded-lg px-1 hidden xl:flex items-center justify-center text center h-full" >CERTIFICATION STATUS</div>
 
 
   
@@ -728,45 +723,45 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
 
-let ctx = document.querySelector('#myChart').getContext("2d");
+// let ctx = document.querySelector('#myChart').getContext("2d");
 
 
-const labels = [
-    "Jan 2021",
-    "March 2021",
-    "Jun 2021",
-    "Sep 2021",
-    "Dec 2021",
+// const labels = [
+//     "Jan 2021",
+//     "March 2021",
+//     "Jun 2021",
+//     "Sep 2021",
+//     "Dec 2021",
    
-]
+// ]
 
-const data = {
-    labels,
-    datasets: [{
-        data: [20,21,21,21.5,21,],
-        label: "Certificaltes",
-        fill: false,
-        borderColor: '#00A1E0',
-        pointBackgroundColor: '#958aff',
-        tension: '0.5',
-        backgroundColor: '#d9f4ff',
-        borderColor: '#00A1E0',
+// const data = {
+//     labels,
+//     datasets: [{
+//         data: [20,21,21,21.5,21,],
+//         label: "Certificaltes",
+//         fill: false,
+//         borderColor: '#00A1E0',
+//         pointBackgroundColor: '#958aff',
+//         tension: '0.5',
+//         backgroundColor: '#d9f4ff',
+//         borderColor: '#00A1E0',
         
-    }]
-}
+//     }]
+// }
 
-const config = {
-    type: "line",
-    data: data,
-    options:{
-      radius: 4.5,
-      hitRadius: 30,
-      hoverRadius: 6,
-        responsive: true,
-    }
-}
+// const config = {
+//     type: "line",
+//     data: data,
+//     options:{
+//       radius: 4.5,
+//       hitRadius: 30,
+//       hoverRadius: 6,
+//         responsive: true,
+//     }
+// }
 
-const myChart = new Chart(ctx, config);
+// const myChart = new Chart(ctx, config);
 
 
 
@@ -844,8 +839,9 @@ var options = {
           }
         ],
           chart: {
-          height: 450,
-          type: 'rangeBar'
+          type: 'rangeBar',
+          height: 300,
+
         },
         plotOptions: {
           bar: {
